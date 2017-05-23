@@ -1,3 +1,7 @@
+<div *ngIf='!video'>Loading...</div>
+<!-- Removing question marks will log an error. Since request is asynchronous and rendering before setting video object throws an error. 
+	 Other way to avoid this is setting 'Default' video in 'video-detail.component.ts'	-->
+<h1>{{ video?.name }}</h1>
 <p>
-  {{slug}} works!
+  {{ video?.slug }} works!
 </p>
