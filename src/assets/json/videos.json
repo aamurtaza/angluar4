@@ -3,13 +3,15 @@
      "name": "Welcome",
      "slug": "item-1",
      "embed": "1hyjLD7pk10",
-     "image": "assets/images/nature/4.jpg"
+     "image": "assets/images/nature/4.jpg",
+     "featured": true
     },
     {
      "name": "Item 2",
      "slug": "item-2",
      "embed": "1hyjLD7pk10",
-     "image": "assets/images/nature/5.jpg"
+     "image": "assets/images/nature/5.jpg",
+     "featured": false
     },
     {
      "name": "Item 3",

@@ -10,16 +10,22 @@ import { Http } from '@angular/http'
 export class HomeComponent implements OnInit {
   private req: any
 	homeListImages = [
-		{image: "assets/images/nature/4.jpg", name:"Image 4", slug: "videos-1"},
-		{image: "assets/images/nature/5.jpg", name:"Image 5", slug: "videos-1"},
-		{image: "assets/images/nature/6.jpg", name:"Image 6", slug: "videos-1"},	
+		// {image: "assets/images/nature/4.jpg", name:"Image 4", slug: "videos-1"},
+		// {image: "assets/images/nature/5.jpg", name:"Image 5", slug: "videos-1"},
+		// {image: "assets/images/nature/6.jpg", name:"Image 6", slug: "videos-1"},	
 	]
 
   constructor(private http:Http, private router:Router) { }
 
   ngOnInit() {
     this.req = this.http.get('assets/json/videos.json').subscribe(data => {
-      this.homeListImages = data.json()
+      console.log(data.json())
+      data.json().filter(item => {
+          if(item.featured) {
+              this.homeListImages.push(item)
+          }
+      })
+      // this.homeListImages = data.json()
     })
   }
 
