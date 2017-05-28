@@ -1,9 +1,7 @@
-<form class="navbar-form navbar-left">
+<form #searchForm='ngForm' class="navbar-form navbar-left" (ngSubmit)='submitSearch($event, searchForm)'>
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search" name = 'searchQuery' [(ngModel)]='searchQuery'>
+        <input type="text" class="form-control" placeholder="Search" name = 'q' [(ngModel)]="searchQuery">
     </div>
-    <button type="submit" class="btn btn-default"> 
-    <span *ngIf='!searchQuery'> Search</span>
-    <span *ngIf='searchQuery'> Search for ... {{ searchQuery }}</span>
+    <button type="submit" class="btn btn-default">Submit 
     </button>
 </form>

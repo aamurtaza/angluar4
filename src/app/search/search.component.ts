@@ -12,4 +12,9 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
+  submitSearch(event, formData) {
+  	console.log(event)
+  	console.log(formData)
+  }
+
 }
