@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
+	searchLocation = 'Finland'
   constructor() { }
 
   ngOnInit() {
@@ -14,7 +14,11 @@ export class SearchComponent implements OnInit {
 
   submitSearch(event, formData) {
   	console.log(event)
-  	console.log(formData)
+  	console.log(formData.value)
+  }
+
+  searchQueryChange() {
+  	this.searchLocation = 'helsinki'
   }
 
 }
