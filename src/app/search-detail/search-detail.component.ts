@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-detail',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchDetailComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private route:ActivatedRoute) { }
+  	routeSub: any
+  	query: String;
   ngOnInit() {
+  	this.routeSub = this.route.params.subscribe(params =>{
+  		console.log(params)
+  		this.query = params['q']
+  	})
+  }
+
+  ngOnDestroy(){
+  	this.routeSub.unsubscribe()
   }
 
 }

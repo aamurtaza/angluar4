@@ -14,3 +14,7 @@
 .carousel-control.left {
     cursor: pointer;
 }
+
+.search-inline .navbar-left {
+	float: none !important;
+}

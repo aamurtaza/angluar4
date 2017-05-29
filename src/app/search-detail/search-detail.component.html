@@ -1,3 +1,7 @@
-<p>
-  search-detail works!
-</p>
+<search class='text-center search-inline' *ngIf='!query'></search>
+<div *ngIf='query'>
+    search for {{ query }}!
+</div>
+<div class="text-center">
+    <h1>Search Somthing</h1>
+</div>
