@@ -37,7 +37,11 @@
           </ul>
         </li>
       </ul>
-     <search></search>
+      <!-- This passedQuery is not working as expected.
+        On page refresh this serach component empty the value.
+        On the other side the second examplary search componet shows query.
+       -->
+     <search [passedQuery]='query'></search> 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
         <li class="dropdown" dropdown>
