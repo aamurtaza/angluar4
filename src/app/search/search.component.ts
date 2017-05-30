@@ -8,13 +8,17 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 	searchLocation = 'Finland'
+	searchQuery: string;
 	@Input()
 	passedQuery: string;
 
   constructor(private router:Router) { }
 
   ngOnInit() {
-  	console.log(this.passedQuery)
+  	// console.log(this.passedQuery)
+  	if(this.passedQuery) {
+  		this.searchQuery = this.passedQuery
+  	}
   }
 
   submitSearch(event, formData) {
