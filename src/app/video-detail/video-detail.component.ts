@@ -20,16 +20,11 @@ export class VideoDetailComponent implements OnInit {
 
   ngOnInit() {
   		this.routeSub = this.route.params.subscribe(params => {
-  			console.log(params)
-  			this.slug = params['slug']
-        this.req = this._videos.list().subscribe(data => {
-            data.filter(item => {
-                if (item.slug == this.slug) {
-                  console.log(item)
-                  this.video = item
-                }
-            })
-        })
+  		    // console.log(params)
+  			  this.slug = params['slug']
+          this.req = this._videos.get(this.slug).subscribe(data => {
+              this.video = data
+          })
   		})
   }
 
