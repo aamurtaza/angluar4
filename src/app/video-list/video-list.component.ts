@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Http } from '@angular/http';
 
 import { VideoService } from '../videos/video.service';
 
@@ -11,11 +10,9 @@ import { VideoService } from '../videos/video.service';
 })
 export class VideoListComponent implements OnInit, OnDestroy {
     private req: any;
-    title = "Video List";
-    someItem = "<h1>Hi there</h1>"
     todayDate; // https://angular.io/docs/ts/latest/guide/pipes.html
     videoList: [any];
-  constructor(private http:Http, private _video: VideoService) {}
+  constructor(private _video: VideoService) {}
 
   ngOnInit() {
     this.todayDate = new Date()
