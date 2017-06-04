@@ -14,6 +14,7 @@ import { VideoItem } from '../videos/video';
 export class HomeComponent implements OnInit {
   private req: any
 	homeListImages:[VideoItem] = [] as [VideoItem]
+  videoListDefaultImage = "assets/images/videos/1.jpg";
 
   constructor(private router:Router, private _videos:VideoService) { }
 

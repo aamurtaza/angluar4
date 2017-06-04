@@ -1,6 +1,16 @@
 <div class='row'>
     <div class='col-sm-12'>
         <carousel class='text-center' *ngIf='homeListImages'>
+          <slide >
+                <a class='' routerLink="/videos/" routerLinkActive="active"> 
+                <!-- (click)='preventNormal($event, imageObj)' -->
+                    <img class='img-main-carousel' [src]= 'videoListDefaultImage' alt="First slide">
+                </a>
+                <div class="carousel-caption">
+                    <h3>Video List</h3>
+                    <p><a class='btn btn-primary' routerLink="/videos/" routerLinkActive="active">View Videos</a></p>
+                </div>
+            </slide>
             <slide *ngFor='let imageObj of homeListImages'>
                 <a class='' routerLink="/videos/{{ imageObj.slug }}" routerLinkActive="active"> 
                 <!-- (click)='preventNormal($event, imageObj)' -->
