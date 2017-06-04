@@ -18,3 +18,7 @@
 .search-inline .navbar-left {
 	float: none !important;
 }
+
+.img-center {
+	margin: 0 auto;
+}

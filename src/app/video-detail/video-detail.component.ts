@@ -31,5 +31,8 @@ export class VideoDetailComponent implements OnInit {
   		this.routeSub.unsubscribe()
       this.req.unsubscribe()
   }
-
+  
+  getEmbedUrl(item){
+    return 'https://www.youtube.com/embed/' + item.embed + '?ecver=2'
+  }
 }

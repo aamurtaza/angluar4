@@ -11,12 +11,11 @@ import { VideoService } from '../videos/video.service';
 })
 export class VideoListComponent implements OnInit, OnDestroy {
     private req: any;
-    todayDate; // https://angular.io/docs/ts/latest/guide/pipes.html
+    title:string = "Video List"
     videoList: [VideoItem];
   constructor(private _video: VideoService) {}
 
   ngOnInit() {
-    this.todayDate = new Date()
     this.req = this._video.list().subscribe(data=>{
       console.log(data)
       this.videoList = data as [VideoItem];
@@ -27,9 +26,4 @@ export class VideoListComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.req.unsubscribe()
   }
-
-  getEmbedUrl(item){
-    return 'https://www.youtube.com/embed/' + item.embed + '?ecver=2'
-  }
-
 }
