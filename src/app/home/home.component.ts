@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router }  from '@angular/router'
 
 import { VideoService } from '../videos/video.service'
+import { VideoItem } from '../videos/video';
+
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,7 @@ import { VideoService } from '../videos/video.service'
 })
 export class HomeComponent implements OnInit {
   private req: any
-	homeListImages:[any] = [] as [any]
+	homeListImages:[VideoItem] = [] as [VideoItem]
 
   constructor(private router:Router, private _videos:VideoService) { }
 
@@ -19,7 +21,8 @@ export class HomeComponent implements OnInit {
     this.req = this._videos.list().subscribe(data => {
       data.filter(item => {
           if(item.featured) {
-              this.homeListImages.push(item)
+            let videoItem = item as VideoItem
+            this.homeListImages.push(videoItem)
           }
       })
     })

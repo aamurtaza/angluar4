@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
+import { VideoItem } from '../videos/video';
 import { VideoService } from '../videos/video.service';
 
 @Component({
